@@ -12,12 +12,12 @@ on:
       GIT_FunctionApp_Name:
         description: 'Provide the Function App Name'
         required: true
-        default: 'functionappsrs'
+        default: 'FunctionApplication'
         
       GIT_FunctionApp_URL:
         description: 'Provide the Function App URL'
         required: true
-        default: 'https://functionappsrs.azurewebsites.net'
+        default: 'https://functionapplication.azurewebsites.net'
         
        # This is the path of your Function app in Git.
       GIT_FunctionApp_PATH:
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       AZURE_FUNCTIONAPP_PACKAGE_PATH: ${{ github.workspace }}/${{ github.event.inputs.GIT_FunctionApp_PATH }} # set this to the path to your web app project, defaults to the repository root
-      PYTHON_VERSION: '3.9' # set this to the python version to use (supports 3.6, 3.7, 3.8)
+      PYTHON_VERSION: '3.8' # set this to the python version to use (supports 3.6, 3.7, 3.8)
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
